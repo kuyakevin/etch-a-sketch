@@ -1,29 +1,11 @@
-const gridContainer = document.querySelector('#gridContainer');
+let board = document.querySelector('.board')
 
-gridSize();
+//creates a grid of 16x16 with a width of 1 fr
+board.style.gridTemplateColums = 'repeat(16, 1fr)'
+board.style.gridTemplateRows = 'repeat(16, 1fr)'
 
-function gridSize(x = 20) {
-    for(i=0; i < x; i++){
-        let row = document.createElement('div')
-        row.className='row'
-        for(j=1; j<=x; j++){
-            let square = document.createElement('div')
-            square.className='gridSquare'
-            square.style.border='thin solid black'
-            square.addEventListener('mouseover', () => {
-                square.style.background = 'red'
-            })
-            row.appendChild(square)
-        }
-        gridContainer.appendChild(row)
-    }
-}
-
-function changeSize(){
-    let sizeInput = prompt('Please enter desired grid size (Ex: 32 = 32x32 grid)') 
-    if (sizeInput <= 0 || sizeInput == 100 || isNaN(sizeInput)) {
-        alert('Invalid input')
-    }else{
-        gridSize(sizeInput)
-    } 
+for(let i = 0; i < 256; i++){
+    let square = document.createElement('div')
+    square.style.backgroundColor = 'blue';
+    board.insertAdjacentElement("beforeend", square);
 }
