@@ -9,17 +9,18 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div class="flexContainer">
+    <div class="flex-container">
         <div class="title">
             <h1>SketchPad</h1>
         </div>
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button>Black</button>
-                <button>White</button>
-                <button>Random</button>
-                <button>Reset</button>
+                <button onclick="changeColor('black')">Black</button>
+                <button onclick="changeColor('red')">Red</button>
+                <button onclick="changeColor('random')">Random</button>
+                <button onclick="changeColor('white')">Eraser</button>
+                <button onclick="window.location.reload();">Reset</button>
             </div>
             <div>
                 <input 
